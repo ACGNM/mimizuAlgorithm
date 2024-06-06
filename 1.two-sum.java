@@ -5,17 +5,27 @@
  */
 
 // @lc code=start
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        int n = nums.length;
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = i + 1; j < n; j++) {
-                if (nums[i] + nums[j] == target) {
-                    return new int[]{i, j};
-                }
+        Map<Integer, Integer> anotherMap = new HashMap<>();
+        int[] result = new int[2];
+        for(int i = 0; i<nums.length; i++) {
+            Integer temp = target - nums[i];
+            Integer another = anotherMap.get(temp);
+            if(Objects.isNull(another)) {
+                anotherMap.put(nums[i], i);
+            } else {
+                result[0] = another;
+                result[1] = i;
+                break;
             }
         }
-        return new int[]{}; // No solution found
+        return result;
     }
 }
 // @lc code=end
