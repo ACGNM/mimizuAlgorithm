@@ -5,6 +5,7 @@
  */
 
 // @lc code=start
+// 双指针
 class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         int[] result = new int[m+n];
