@@ -21,8 +21,18 @@
  * }
  */
 class Solution {
+    // 递归反转其左右子树
+    // 反转好了再反转当前树的左右节点
     public TreeNode invertTree(TreeNode root) {
-        
+        if (root == null) {
+            return root;
+        }
+        invertTree(root.left);
+        invertTree(root.right);
+        TreeNode temp = root.left;
+        root.left = root.right;
+        root.right = temp;
+        return root;
     }
 }
 // @lc code=end
