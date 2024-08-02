@@ -16,18 +16,14 @@ public class InsertionSort {
             int j = currPos;
             int currVal = nums[i];
             // 把当前元素与前方排序过的部分的每一个元素相比较
-            while (j >= 0) {
-                // 当前元素比循环中的元素小的时候就依次把大的元素向后移
-                if (currVal < nums[j]) {
-                    nums[j+1] = nums[j];
-                    j--;
-                } else {
-                    // 如果找到了合适的位置就结束循环
-                    break;
-                }
+            // 当前元素比循环中的元素小的时候就依次把大的元素向后移
+            // 如果找到了合适的位置就结束循环
+            while (j >= 0 && currVal < nums[j]) {
+                nums[j+1] = nums[j];
+                j--;
             }
             // 结束循环时j的位置的后一个就是正确的插入位置
-            // 因为nums[j]是第一个比nums[i]小的蒜素，是当前元素的前一个位置
+            // 因为nums[j]是第一个比nums[i]小的元素，是当前元素的前一个位置
             nums[j+1] = currVal;
             currPos++;
 
@@ -38,7 +34,7 @@ public class InsertionSort {
     }
     
     public static void main(String[] args) {
-        int[] sortedArray = new InsertionSort().sortArray(new int[]{3, 1, 5, 4, 2, 6, 9, 8});
+        int[] sortedArray = new InsertionSort().sortArray(new int[]{3, 1, 5, 9, 6, 4, 2, 8, 7});
         System.out.println(Arrays.toString(sortedArray));
     }
 }

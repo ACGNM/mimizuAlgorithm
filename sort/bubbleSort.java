@@ -2,7 +2,7 @@ package sort;
 
 import java.util.Arrays;
 
-public class bubbleSort {
+public class BubbleSort {
     public int[] sortArray(int[] nums) {
         int n = nums.length;
         // 从头开始两两比较，把大的向后交换
@@ -22,7 +22,7 @@ public class bubbleSort {
     }
     
     public static void main(String[] args) {
-        int[] sortedArray = new bubbleSort().sortArray(new int[]{3, 1, 5, 4, 2, 6, 9, 8});
+        int[] sortedArray = new BubbleSort().sortArray(new int[]{3, 1, 5, 4, 2, 6, 9, 8});
         System.out.println(Arrays.toString(sortedArray));
     }
 }
