@@ -40,6 +40,7 @@ public class QuickSort {
         System.out.println("Current pivot is " + pivot);
         int index = start - 1;
         swap(nums, pivot_pos, end);
+        // 这里的<=相当于最后把pivot换到它所在的位置了
         for (int i = start; i <= end; i++) {
             if (nums[i] <= pivot) {
                 index ++;
